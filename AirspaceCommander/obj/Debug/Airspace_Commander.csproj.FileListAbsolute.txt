@@ -1,0 +1,47 @@
+C:\Users\mohac\Documents\Visual Studio 2015\Projects\Prog3_jatek\Prog3_jatek\bin\Debug\Comments.XML
+C:\Users\mohac\Documents\Visual Studio 2015\Projects\Prog3_jatek\Prog3_jatek\obj\Debug\Airspace_Commander.csprojResolveAssemblyReference.cache
+C:\Users\mohac\Documents\Visual Studio 2015\Projects\Prog3_jatek\Prog3_jatek\obj\Debug\MainWindow.g.cs
+C:\Users\mohac\Documents\Visual Studio 2015\Projects\Prog3_jatek\Prog3_jatek\obj\Debug\App.g.cs
+C:\Users\mohac\Documents\Visual Studio 2015\Projects\Prog3_jatek\Prog3_jatek\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\mohac\Documents\Visual Studio 2015\Projects\Prog3_jatek\Prog3_jatek\obj\Debug\App.baml
+C:\Users\mohac\Documents\Visual Studio 2015\Projects\Prog3_jatek\Prog3_jatek\obj\Debug\MainWindow.baml
+C:\Users\mohac\Documents\Visual Studio 2015\Projects\Prog3_jatek\Prog3_jatek\obj\Debug\Airspace_Commander.csproj.GenerateResource.Cache
+C:\Users\mohac\Documents\Visual Studio 2015\Projects\Prog3_jatek\Prog3_jatek\bin\Debug\Airspace_Commander.exe.config
+C:\Users\mohac\Documents\Visual Studio 2015\Projects\Prog3_jatek\Prog3_jatek\bin\Debug\Airspace_Commander.exe
+C:\Users\mohac\Documents\Visual Studio 2015\Projects\Prog3_jatek\Prog3_jatek\bin\Debug\Airspace_Commander.pdb
+C:\Users\mohac\Documents\Visual Studio 2015\Projects\Prog3_jatek\Prog3_jatek\obj\Debug\Airspace_Commander_MarkupCompile.cache
+C:\Users\mohac\Documents\Visual Studio 2015\Projects\Prog3_jatek\Prog3_jatek\obj\Debug\Airspace_Commander_MarkupCompile.lref
+C:\Users\mohac\Documents\Visual Studio 2015\Projects\Prog3_jatek\Prog3_jatek\obj\Debug\Airspace_Commander.g.resources
+C:\Users\mohac\Documents\Visual Studio 2015\Projects\Prog3_jatek\Prog3_jatek\obj\Debug\Airspace_Commander.Properties.Resources.resources
+C:\Users\mohac\Documents\Visual Studio 2015\Projects\Prog3_jatek\Prog3_jatek\obj\Debug\Airspace_Commander.exe
+C:\Users\mohac\Documents\Visual Studio 2015\Projects\Prog3_jatek\Prog3_jatek\obj\Debug\Airspace_Commander.pdb
+C:\Users\mohac\Documents\Visual Studio 2015\Projects\Prog3_jatek\Prog3_jatek\bin\Debug\_building.png
+C:\Users\mohac\Documents\Visual Studio 2015\Projects\Prog3_jatek\Prog3_jatek\bin\Debug\_jet.png
+C:\Users\mohac\Documents\Visual Studio 2015\Projects\Prog3_jatek\Prog3_jatek\bin\Debug\_meteor.png
+C:\Users\mohac\Documents\Visual Studio 2015\Projects\Prog3_jatek\Prog3_jatek\bin\Debug\_rocket.png
+C:\Users\mohac\Documents\Visual Studio 2015\Projects\Prog3_jatek\Prog3_jatek\bin\Debug\_shield.png
+C:\Users\mohac\Documents\Visual Studio 2015\Projects\Prog3_jatek\Prog3_jatek\bin\Debug\_ufo.png
+C:\Users\Cryosted\Source\Repos\oenik_prog3_2016osz_stke7o\AirspaceCommander\bin\Debug\_building.png
+C:\Users\Cryosted\Source\Repos\oenik_prog3_2016osz_stke7o\AirspaceCommander\bin\Debug\_jet.png
+C:\Users\Cryosted\Source\Repos\oenik_prog3_2016osz_stke7o\AirspaceCommander\bin\Debug\_meteor.png
+C:\Users\Cryosted\Source\Repos\oenik_prog3_2016osz_stke7o\AirspaceCommander\bin\Debug\_rocket.png
+C:\Users\Cryosted\Source\Repos\oenik_prog3_2016osz_stke7o\AirspaceCommander\bin\Debug\_shield.png
+C:\Users\Cryosted\Source\Repos\oenik_prog3_2016osz_stke7o\AirspaceCommander\bin\Debug\_ufo.png
+C:\Users\Cryosted\Source\Repos\oenik_prog3_2016osz_stke7o\AirspaceCommander\bin\Debug\Airspace_Commander.exe.config
+C:\Users\Cryosted\Source\Repos\oenik_prog3_2016osz_stke7o\AirspaceCommander\bin\Debug\Comments.XML
+C:\Users\Cryosted\Source\Repos\oenik_prog3_2016osz_stke7o\AirspaceCommander\bin\Debug\Airspace_Commander.exe
+C:\Users\Cryosted\Source\Repos\oenik_prog3_2016osz_stke7o\AirspaceCommander\bin\Debug\Airspace_Commander.pdb
+C:\Users\Cryosted\Source\Repos\oenik_prog3_2016osz_stke7o\AirspaceCommander\obj\Debug\Airspace_Commander.csprojResolveAssemblyReference.cache
+C:\Users\Cryosted\Source\Repos\oenik_prog3_2016osz_stke7o\AirspaceCommander\obj\Debug\MainWindow.g.cs
+C:\Users\Cryosted\Source\Repos\oenik_prog3_2016osz_stke7o\AirspaceCommander\obj\Debug\App.g.cs
+C:\Users\Cryosted\Source\Repos\oenik_prog3_2016osz_stke7o\AirspaceCommander\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Cryosted\Source\Repos\oenik_prog3_2016osz_stke7o\AirspaceCommander\obj\Debug\Airspace_Commander_MarkupCompile.cache
+C:\Users\Cryosted\Source\Repos\oenik_prog3_2016osz_stke7o\AirspaceCommander\obj\Debug\Airspace_Commander_MarkupCompile.lref
+C:\Users\Cryosted\Source\Repos\oenik_prog3_2016osz_stke7o\AirspaceCommander\obj\Debug\App.baml
+C:\Users\Cryosted\Source\Repos\oenik_prog3_2016osz_stke7o\AirspaceCommander\obj\Debug\MainWindow.baml
+C:\Users\Cryosted\Source\Repos\oenik_prog3_2016osz_stke7o\AirspaceCommander\obj\Debug\Airspace_Commander.g.resources
+C:\Users\Cryosted\Source\Repos\oenik_prog3_2016osz_stke7o\AirspaceCommander\obj\Debug\Airspace_Commander.Properties.Resources.resources
+C:\Users\Cryosted\Source\Repos\oenik_prog3_2016osz_stke7o\AirspaceCommander\obj\Debug\Airspace_Commander.csproj.GenerateResource.Cache
+C:\Users\Cryosted\Source\Repos\oenik_prog3_2016osz_stke7o\AirspaceCommander\obj\Debug\Airspace_Commander.csproj.CoreCompileInputs.cache
+C:\Users\Cryosted\Source\Repos\oenik_prog3_2016osz_stke7o\AirspaceCommander\obj\Debug\Airspace_Commander.exe
+C:\Users\Cryosted\Source\Repos\oenik_prog3_2016osz_stke7o\AirspaceCommander\obj\Debug\Airspace_Commander.pdb

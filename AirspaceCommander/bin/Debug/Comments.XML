@@ -1,0 +1,2023 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Airspace_Commander</name>
+    </assembly>
+    <members>
+        <member name="T:Airspace_Commander.Building">
+            <summary>
+            This class represents a building in the city
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Building.W">
+            <summary>
+            Width of every Building
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Building.H">
+            <summary>
+            Height of every Building
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Building.maxHP">
+            <summary>
+            The max HP of the building
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Building.curHP">
+            <summary>
+            The current (actual) HP of the building
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Building.shield">
+            <summary>
+            The active shield on the building
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Building.position">
+            <summary>
+            The buildingshape to refer to
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.Building.#ctor(System.Int32,System.Windows.Point)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Airspace_Commander.Building" /> class.
+            </summary>
+            <param name="newMaxHP">Max hitpoints this building will have</param>
+            <param name="coords">The coordinates to place the building at</param>
+        </member>
+        <member name="P:Airspace_Commander.Building.MaxHP">
+            <summary>
+            Gets or sets the maxHP of the building
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Building.CurHP">
+            <summary>
+            Gets or sets the current HP of the building
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Building.Is_OK">
+            <summary>
+            Gets a value indicating whether the building has any HP left
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Building.Shield">
+            <summary>
+            Gets the shield currently active on the building
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Building.Position">
+            <summary>
+            Gets the shape this logic refers to
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.Building.Hit(System.Int32)">
+            <summary>
+            Damages the building
+            </summary>
+            <param name="damage">The damage to inflict</param>
+        </member>
+        <member name="M:Airspace_Commander.Building.Renovate">
+            <summary>
+            Restores 1 HP to the building
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.Building.Modernize">
+            <summary>
+            Doubles the max HP of the building
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.Building.ActivateShield(Airspace_Commander.Shield)">
+            <summary>
+            Replaces the currently active shield with a new one.
+            </summary>
+            <param name="newShield">The shield which should be placed on the building</param>
+        </member>
+        <member name="T:Airspace_Commander.BuildingToGeometryConverter">
+            <summary>
+            Converter between building logic and geometry
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.BuildingToGeometryConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a BindingList of buildings into a GeometryGroup
+            </summary>
+            <param name="value">A BindingList containing buildings</param>
+            <param name="targetType">The parameter is not used.</param>
+            <param name="parameter">The parameter is not used.</param>
+            <param name="culture">The parameter is not used.</param>
+            <returns>Returns a GeometryGroup which has all buildings included</returns>
+        </member>
+        <member name="M:Airspace_Commander.BuildingToGeometryConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            The method is not used
+            </summary>
+            <param name="value">The parameter is not used.</param>
+            <param name="targetType">The parameter is not used.</param>
+            <param name="parameter">The parameter is not used.</param>
+            <param name="culture">The parameter is not used.</param>
+            <returns>Returns a NotImplementedException</returns>
+        </member>
+        <member name="T:Airspace_Commander.Explosion">
+            <summary>
+            This class represents an explosion
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Explosion.radius">
+            <summary>
+            Contains the radius of the explosion
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Explosion.maxRadius">
+            <summary>
+            Contains the radius of the explosion
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Explosion.position">
+            <summary>
+            Contains the position of the explodion (center)
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Explosion.damage">
+            <summary>
+            Contains the damage the explosion causes
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Explosion.ttl">
+            <summary>
+            Contains the Time To Live until the explosion disappears
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.Explosion.#ctor(System.Windows.Point,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Airspace_Commander.Explosion" /> class.
+            </summary>
+            <param name="pos">The position of the explosion</param>
+            <param name="newRadius">The radisu of the explosion</param>
+            <param name="newDamage">The damage this explosion causes</param>
+            <param name="newTtl">Time To Live, represents the number of ticks before the explosion disappears</param>
+        </member>
+        <member name="P:Airspace_Commander.Explosion.Radius">
+            <summary>
+            Gets the radius of the explosion
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Explosion.Position">
+            <summary>
+            Gets the position of the explosion (center)
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Explosion.Damage">
+            <summary>
+            Gets the damage the explosion causes
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Explosion.Ttl">
+            <summary>
+            Gets or sets the number of ticks left before the explosion disappears
+            </summary>
+        </member>
+        <member name="T:Airspace_Commander.ExplosionToGeometryConverter">
+            <summary>
+            Converter between explosion logic and geometry
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.ExplosionToGeometryConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a BindingList of explosions into a GeometryGroup
+            </summary>
+            <param name="value">A BindingList containing explosions</param>
+            <param name="targetType">The parameter is not used.</param>
+            <param name="parameter">The parameter is not used.</param>
+            <param name="culture">The parameter is not used.</param>
+            <returns>Returns a GeometryGroup containing all explosions</returns>
+        </member>
+        <member name="M:Airspace_Commander.ExplosionToGeometryConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            The method is not used.
+            </summary>
+            <param name="value">The parameter is not used.</param>
+            <param name="targetType">The parameter is not used.</param>
+            <param name="parameter">The parameter is not used.</param>
+            <param name="culture">The parameter is not used.</param>
+            <returns>Returns a NotImplementedException</returns>
+        </member>
+        <member name="T:Airspace_Commander.GameManager">
+            <summary>
+            This class manages all in-game elements
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.GameManager.vm">
+            <summary>
+            Stores the ViewModel reference
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.GameManager.cw">
+            <summary>
+            Stores the actual canvas width and height
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.GameManager.ch">
+            <summary>
+            Stores the actual canvas width and height
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.GameManager.rocketsToInsert">
+            <summary>
+            Rocket queue which contains rockets that will be inserted in the ViewModel on the next tick
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.GameManager.explosionsToInsert">
+            <summary>
+            RExplosion queue which contains explosions that will be inserted in the ViewModel on the next tick
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.GameManager.#ctor(System.Double,System.Double,Airspace_Commander.ViewModel)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Airspace_Commander.GameManager" /> class.
+            </summary>
+            <param name="w">The play area width</param>
+            /// <param name="h">The play area height</param>
+            <param name="newVM">The ViewModel to use</param>
+        </member>
+        <member name="P:Airspace_Commander.GameManager.Cw">
+            <summary>
+            Gets the actual canvas width
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.GameManager.Ch">
+            <summary>
+            Gets the actual canvas height
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.GameManager.Intersects(Airspace_Commander.IMovable,System.Object)">
+            <summary>
+            Checks if two game objects intersect with each other
+            </summary>
+            <param name="first">A moving game object</param>
+            <param name="second">Any game object</param>
+            <returns>returns true if the two intersect, false otherwise</returns>
+        </member>
+        <member name="M:Airspace_Commander.GameManager.GenerateBuildings(System.Int32)">
+            <summary>
+            Generates the logic for buildings
+            </summary>
+            <param name="num">The amount to generate</param>
+            <returns>Returns a list which has all the newly generated building logics</returns>
+        </member>
+        <member name="M:Airspace_Commander.GameManager.GenerateRocket(System.Boolean,System.Double,System.Double)">
+            <summary>
+            Generate the logic for a rocket
+            </summary>
+            <param name="is_friendly">States if the rocket was fired by the player</param>
+            <param name="clickX">The X coordinate of the mouse click</param>
+            <param name="clickY">The Y coordinate of the mouse click</param>
+            <returns>Returns a rocket instance</returns>
+        </member>
+        <member name="M:Airspace_Commander.GameManager.GenerateMeteor(System.Boolean)">
+            <summary>
+            Generates a new meteor
+            </summary>
+            <param name="ultraSolid">False for 1 HP, true for 2 or 3</param>
+            <returns>Returns the Meteor generated</returns>
+        </member>
+        <member name="M:Airspace_Commander.GameManager.GenerateUfo">
+            <summary>
+            Generates a new UFO
+            </summary>
+            <returns>Returns the UFO generated</returns>
+        </member>
+        <member name="M:Airspace_Commander.GameManager.GenerateJet">
+            <summary>
+            Generates a new Jet
+            </summary>
+            <returns>Returns the Jet generated</returns>
+        </member>
+        <member name="M:Airspace_Commander.GameManager.GenerateExplosion(System.Windows.Point,System.Int32,System.Int32)">
+            <summary>
+            Generates an explosion and adds it directly to the ViewModel
+            </summary>
+            <param name="coords">The position the explosion should be spawned at</param>
+            <param name="radius">The radius the explosion should have</param>
+            <param name="damage">The damage the explosion should cause</param>
+        </member>
+        <member name="M:Airspace_Commander.GameManager.GenerateShield">
+            <summary>
+            Generates a new Shield
+            </summary>
+            <returns>Returns the Shield generated</returns>
+        </member>
+        <member name="M:Airspace_Commander.GameManager.GmTick">
+            <summary>
+            Handles the queues
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.GameManager.Score(System.Int32)">
+            <summary>
+            Adds 1 to the Score
+            </summary>
+            <param name="amount">The score to add</param>
+        </member>
+        <member name="M:Airspace_Commander.GameManager.MoveElements">
+            <summary>
+            Moves IMovable elements
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.GameManager.CheckExplosions">
+            <summary>
+            Checks if any explosions need removal
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.GameManager.CheckBuildings">
+            <summary>
+            Checks all buildings for removability
+            </summary>
+            <returns>Returns true if any building is still standing, false if all are destroyed</returns>
+        </member>
+        <member name="M:Airspace_Commander.GameManager.GenerateEngine(System.Boolean)">
+            <summary>
+            Generates an engine
+            </summary>
+            <param name="is_friendly">States if the engine is for a player rocket</param>
+            <returns>Returns an engine instance</returns>
+        </member>
+        <member name="M:Airspace_Commander.GameManager.GenerateWarhead(System.Boolean)">
+            <summary>
+            Generates a warhead
+            </summary>
+            <param name="is_friendly">States if the warhead is for a player rocket</param>
+            <returns>Returns a warhead instance</returns>
+        </member>
+        <member name="T:Airspace_Commander.IMovable">
+            <summary>
+            An interface for all moving game objects
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.IMovable.Position">
+            <summary>
+            Gets the position of the object
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.IMovable.StartX">
+            <summary>
+            Gets the start coordinate of the game object on the X axis
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.IMovable.StartY">
+            <summary>
+            Gets the start coordinate of the game object on the Y axis
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.IMovable.TargetX">
+            <summary>
+            Gets the target coordinate of the game object on the X axis
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.IMovable.TargetY">
+            <summary>
+            Gets the start coordinate of the game object on the Y axis
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.IMovable.IsDestroyed">
+            <summary>
+            Gets a value indicating whether the game object is destroyed
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.IMovable.Angle">
+            <summary>
+            Gets the angle of the object
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.IMovable.Move(Airspace_Commander.GameManager,System.ComponentModel.BindingList{Airspace_Commander.Building})">
+            <summary>
+            Moves the game object
+            </summary>
+            <param name="gm">The GameManager instance to use</param>
+            <param name="buildings">The buildings currently in game</param>
+            <returns>Returns true if the Move is successful, false if the object has been destroyed</returns>
+        </member>
+        <member name="M:Airspace_Commander.IMovable.Explode(Airspace_Commander.GameManager,Airspace_Commander.Building)">
+            <summary>
+            Defines how the object should explode
+            </summary>
+            <param name="gm">The GameManager to use</param>
+            <param name="buildings">The building participating in the collision</param>
+        </member>
+        <member name="M:Airspace_Commander.IMovable.GetHit(Airspace_Commander.Explosion)">
+            <summary>
+            Simulates taking a hit by an explosion
+            </summary>
+            <param name="explosion">The explosion that causes the hit</param>
+            <returns>Returns true if the object was destroyed by the explosion, false otherwise</returns>
+        </member>
+        <member name="T:Airspace_Commander.IEngine">
+            <summary>
+            This is the interface for all rocket engines in the game
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.IEngine.Name">
+            <summary>
+            Gets the name of the engine type
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.IEngine.Speed">
+            <summary>
+            Gets or sets the engine's speed 
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.IEngine.SpeedRate">
+            <summary>
+            Gets or sets the rate at which the engine accelerates the rocket
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.IEngine.Clone">
+            <summary>
+            Clones the engine
+            </summary>
+            <returns>Returns the cloned engine</returns>
+        </member>
+        <member name="T:Airspace_Commander.IMovableToGeometryConverter">
+            <summary>
+            Converter between IMovable elements and GeometryDrawing
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.IMovableToGeometryConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a BindingList of IMovable elements into a GeometryDrawing
+            </summary>
+            <param name="value">A BindingList containing IMovable elements</param>
+            <param name="targetType">The parameter is not used.</param>
+            <param name="parameter">The ViewModel instance to use</param>
+            <param name="culture">The parameter is not used.</param>
+            <returns>Returns a GeometryDrawing that has all elements</returns>
+        </member>
+        <member name="M:Airspace_Commander.IMovableToGeometryConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            The method is not used.
+            </summary>
+            <param name="value">The parameter is not used.</param>
+            <param name="targetType">The parameter is not used.</param>
+            <param name="parameter">The parameter is not used.</param>
+            <param name="culture">The parameter is not used.</param>
+            <returns>Returns a NotImplementedException</returns>
+        </member>
+        <member name="T:Airspace_Commander.Jet">
+            <summary>
+            This class represents a Jet fighter
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Jet.W">
+            <summary>
+            The width of the Jet
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Jet.H">
+            <summary>
+            The height of the Jet
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Jet.dx">
+            <summary>
+            Contains the delta speed on the X axis
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Jet.isDestroyed">
+            <summary>
+            Indicates whether the Jet is destroyed
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Jet.position">
+            <summary>
+            Contains the position of the Jet
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Jet.startX">
+            <summary>
+            Contains the starting position on the X axis
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Jet.startY">
+            <summary>
+            Contains the starting position on the Y axis
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Jet.targetX">
+            <summary>
+            Contains the target position on the X axis
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Jet.targetY">
+            <summary>
+            Contains the target position on the Y axis
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Jet.rocketNum">
+            <summary>
+            Contains the number of rockets the Jet can fire
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Jet.engine">
+            <summary>
+            Contains the engine this jet uses
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.Jet.#ctor(System.Windows.Point,System.Double,Airspace_Commander.IEngine)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Airspace_Commander.Jet" /> class.
+            </summary>
+            <param name="coords">The starting coordinates</param>
+            <param name="newTargetX">The target coordinate on the X axis</param>
+            <param name="newEngine">The engine to use</param>
+        </member>
+        <member name="P:Airspace_Commander.Jet.IsDestroyed">
+            <summary>
+            Gets a value indicating whether the Jet is destroyed
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Jet.Position">
+            <summary>
+            Gets the position of the Jet
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Jet.StartX">
+            <summary>
+            Gets the starting coordinate on the X axis
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Jet.StartY">
+            <summary>
+            Gets the starting coordinate on the Y axis
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Jet.TargetX">
+            <summary>
+            Gets the target coordinate on the X axis
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Jet.TargetY">
+            <summary>
+            Gets the target coordinate on the Y axis
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Jet.Angle">
+            <summary>
+            Gets the direction (display) of the Jet (0 - left, 180 - right)
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.Jet.Move(Airspace_Commander.GameManager,System.ComponentModel.BindingList{Airspace_Commander.Building})">
+            <summary>
+            Moves the Jet
+            </summary>
+            <param name="gm">The GameManager to use</param>
+            <param name="buildings">The parameter is not used.</param>
+            <returns>Returns false if the Jet is no more, true otherwise</returns>
+        </member>
+        <member name="M:Airspace_Commander.Jet.ChangeSpeed">
+            <summary>
+            Increases the rocket's delta speed defined by the engine's properties
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.Jet.Explode(Airspace_Commander.GameManager,Airspace_Commander.Building)">
+            <summary>
+            Simulates the explosion of the Jet
+            </summary>
+            <param name="gm">The GameManager to use</param>
+            <param name="buildings">The parameter is not used.</param>
+        </member>
+        <member name="M:Airspace_Commander.Jet.GetHit(Airspace_Commander.Explosion)">
+            <summary>
+            Simulates the Jet taking a hit from an explosion
+            </summary>
+            <param name="explosion">The explosion that caused the hit</param>
+            <returns>Returns false</returns>
+        </member>
+        <member name="T:Airspace_Commander.JetToGeometryConverter">
+            <summary>
+            This class converts between a Jet and a Geometry
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.JetToGeometryConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a Jet into Geometry
+            </summary>
+            <param name="value">The Jet to convert</param>
+            <param name="targetType">The parameter is not used.</param>
+            <param name="parameter">The parameter is not used.</param>
+            <param name="culture">The parameter is not used.</param>
+            <returns>Returns a Geometry containing the Jet</returns>
+        </member>
+        <member name="M:Airspace_Commander.JetToGeometryConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            The method is not used.
+            </summary>
+            <param name="value">The parameter is not used.</param>
+            <param name="targetType">The parameter is not used.</param>
+            <param name="parameter">The parameter is not used.</param>
+            <param name="culture">The parameter is not used.</param>
+            <returns>Returns a NotImplementedException</returns>
+        </member>
+        <member name="T:Airspace_Commander.LargeEngine">
+            <summary>
+            This class represents a large engine
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.LargeEngine.name">
+            <summary>
+            Contains the name of the engine for display
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.LargeEngine.speed">
+            <summary>
+            Contains the base speed the engine has
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.LargeEngine.speedRate">
+            <summary>
+            Contains the acceleration rate the engine uses
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.LargeEngine.#ctor(System.String,System.Double,System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Airspace_Commander.LargeEngine" /> class.
+            </summary>
+            <param name="newName">The name to display</param>
+            <param name="extraSpeed">Additional speed from bonuses</param>
+            <param name="extraSr">Additional acceleration from bonuses</param>
+        </member>
+        <member name="P:Airspace_Commander.LargeEngine.Name">
+            <summary>
+            Gets the name of the engine
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.LargeEngine.Speed">
+            <summary>
+            Gets or sets the speed the engine has
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.LargeEngine.SpeedRate">
+            <summary>
+            Gets or sets the acceleration rate the engine uses
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.LargeEngine.Clone">
+            <summary>
+            Clones the whole engine
+            </summary>
+            <returns>Returns an exact copy of the engine</returns>
+        </member>
+        <member name="M:Airspace_Commander.LargeEngine.ToString">
+            <summary>
+            Converts the engine to string for display
+            </summary>
+            <returns>Returns the stringified version of the engine</returns>
+        </member>
+        <member name="T:Airspace_Commander.LargeWarhead">
+            <summary>
+            This class represents a large warhead
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.LargeWarhead.name">
+            <summary>
+            Contains the name of this warhead for display
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.LargeWarhead.damage">
+            <summary>
+            Contains the damage this warhead deals
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.LargeWarhead.radius">
+            <summary>
+            Contains the explosion's radius
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.LargeWarhead.#ctor(System.String,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Airspace_Commander.LargeWarhead" /> class.
+            </summary>
+            <param name="newName">The name to display</param>
+            <param name="extraDmg">Additional damage this warhead will deal (base: 1)</param>
+            <param name="extraRadius">Additional radius in which this warhead will be effective (base: 1)</param>
+        </member>
+        <member name="P:Airspace_Commander.LargeWarhead.Name">
+            <summary>
+            Gets the name of this warhead
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.LargeWarhead.Damage">
+            <summary>
+            Gets the damage this warhead deals
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.LargeWarhead.Radius">
+            <summary>
+            Gets the radius this warhead is effective in
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.LargeWarhead.ToString">
+            <summary>
+            Converts the warhead to string for display
+            </summary>
+            <returns>Returns the stringified version of the warhead</returns>
+        </member>
+        <member name="T:Airspace_Commander.MediumEngine">
+            <summary>
+            This class represents a medium engine
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.MediumEngine.name">
+            <summary>
+            Contains the name of the engine for display
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.MediumEngine.speed">
+            <summary>
+            Contains the base speed the engine has
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.MediumEngine.speedRate">
+            <summary>
+            Contains the acceleration rate the engine uses
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.MediumEngine.#ctor(System.String,System.Double,System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Airspace_Commander.MediumEngine" /> class.
+            </summary>
+            <param name="newName">The name to display</param>
+            <param name="extraSpeed">Additional speed from bonuses</param>
+            <param name="extraSr">Additional acceleration from bonuses</param>
+        </member>
+        <member name="P:Airspace_Commander.MediumEngine.Name">
+            <summary>
+            Gets the name of the engine
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.MediumEngine.Speed">
+            <summary>
+            Gets or sets the speed the engine has
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.MediumEngine.SpeedRate">
+            <summary>
+            Gets or sets the acceleration rate the engine uses
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.MediumEngine.Clone">
+            <summary>
+            Clones the whole engine
+            </summary>
+            <returns>Returns an exact copy of the engine</returns>
+        </member>
+        <member name="M:Airspace_Commander.MediumEngine.ToString">
+            <summary>
+            Converts the engine to string for display
+            </summary>
+            <returns>Returns the stringified version of the engine</returns>
+        </member>
+        <member name="T:Airspace_Commander.MediumWarhead">
+            <summary>
+            This class represents a medium warhead
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.MediumWarhead.name">
+            <summary>
+            Contains the name of this warhead for display
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.MediumWarhead.damage">
+            <summary>
+            Contains the damage this warhead deals
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.MediumWarhead.radius">
+            <summary>
+            Contains the explosion's radius
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.MediumWarhead.#ctor(System.String,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Airspace_Commander.MediumWarhead" /> class.
+            </summary>
+            <param name="newName">The name to display</param>
+            <param name="extraDmg">Additional damage this warhead will deal (base: 1)</param>
+            <param name="extraRadius">Additional radius in which this warhead will be effective (base: 1)</param>
+        </member>
+        <member name="P:Airspace_Commander.MediumWarhead.Name">
+            <summary>
+            Gets the name of this warhead
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.MediumWarhead.Damage">
+            <summary>
+            Gets the damage this warhead deals
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.MediumWarhead.Radius">
+            <summary>
+            Gets the radius this warhead is effective in
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.MediumWarhead.ToString">
+            <summary>
+            Converts the warhead to string for display
+            </summary>
+            <returns>Returns the stringified version of the warhead</returns>
+        </member>
+        <member name="T:Airspace_Commander.Meteor">
+            <summary>
+            Represents a meteor
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Meteor.W">
+            <summary>
+            The width of the Meteor
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Meteor.H">
+            <summary>
+            The height of the Meteor
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Meteor.position">
+            <summary>
+            Contains the position of the meteor
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Meteor.maxHP">
+            <summary>
+            The max HP of the meteor
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Meteor.curHP">
+            <summary>
+            The current (actual) HP of the meteor
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Meteor.dx">
+            <summary>
+            Contains the delta speed on the X axis
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Meteor.dy">
+            <summary>
+            Contains the delta speed on the Y axis
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Meteor.startX">
+            <summary>
+            Contains the target coordinate on the X axis
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Meteor.startY">
+            <summary>
+            Contains the target coordinate on the Y axis
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Meteor.targetX">
+            <summary>
+            Contains the target coordinate on the X axis
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Meteor.targetY">
+            <summary>
+            Contains the target coordinate on the Y axis
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Meteor.alreadyHit">
+            <summary>
+            Contains the explosions that already hit the UFO (multi-tick damage protection)
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.Meteor.#ctor(System.Windows.Point,System.Double,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Airspace_Commander.Meteor" /> class.
+            </summary>
+            <param name="coords">The position of the meteor</param>
+            <param name="newTargetY">The target coordinate on the Y axis</param>
+            <param name="newMaxHP">The max HP of the meteor</param>
+        </member>
+        <member name="P:Airspace_Commander.Meteor.Position">
+            <summary>
+            Gets the position of this meteor
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Meteor.TargetX">
+            <summary>
+            Gets the target coordinate on the X axis
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Meteor.TargetY">
+            <summary>
+            Gets the target coordinate on the Y axis
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Meteor.StartX">
+            <summary>
+            Gets the start coordinate on the X axis
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Meteor.StartY">
+            <summary>
+            Gets the start coordinate on the Y axis
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Meteor.MaxHP">
+            <summary>
+            Gets the maxHP of the Meteor
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Meteor.CurHP">
+            <summary>
+            Gets or sets the current HP of the meteor
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Meteor.IsDestroyed">
+            <summary>
+            Gets a value indicating whether the meteor has any HP left
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Meteor.Angle">
+            <summary>
+            Gets the direction (display) of the Meteor (0 - down)
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.Meteor.Move(Airspace_Commander.GameManager,System.ComponentModel.BindingList{Airspace_Commander.Building})">
+            <summary>
+            Moves the meteor
+            </summary>
+            <param name="gm">The GameManager to use</param>
+            /// <param name="buildings">A list containing all buildings</param>
+            <returns>Returns true if the move was successful, false if the the meteor is no more</returns>
+        </member>
+        <member name="M:Airspace_Commander.Meteor.Explode(Airspace_Commander.GameManager,Airspace_Commander.Building)">
+            <summary>
+            Simulates collision with a building
+            </summary>
+            <param name="gm">The GameManager to use</param>
+            <param name="building">The building participating in the collision</param>
+        </member>
+        <member name="M:Airspace_Commander.Meteor.GetHit(Airspace_Commander.Explosion)">
+            <summary>
+            Simulates taking a hit from an explosion
+            </summary>
+            <param name="explosion">The explosion that caused the hit</param>
+            <returns>Returns true if the meteor was destroyed, false otherwise</returns>
+        </member>
+        <member name="T:Airspace_Commander.MeteorToGeometryConverter">
+            <summary>
+            Converter between a Meteor and a Geometry
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.MeteorToGeometryConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a meteor into a Geometry
+            </summary>
+            <param name="value">The meteor</param>
+            <param name="targetType">The parameter is not used.</param>
+            <param name="parameter">The parameter is not used.</param>
+            <param name="culture">The parameter is not used.</param>
+            <returns>Returns a Geometry containing the meteor</returns>
+        </member>
+        <member name="M:Airspace_Commander.MeteorToGeometryConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            The method is not used.
+            </summary>
+            <param name="value">The parameter is not used.</param>
+            <param name="targetType">The parameter is not used.</param>
+            <param name="parameter">The parameter is not used.</param>
+            <param name="culture">The parameter is not used.</param>
+            <returns>Returns a NotImplementedException</returns>
+        </member>
+        <member name="T:Airspace_Commander.ModelToDrawingImageConverter">
+            <summary>
+            Converter between a ViewModel and a DrawingImage
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.ModelToDrawingImageConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a ViewModel into a DrawingImage
+            </summary>
+            <param name="value">A ViewModel</param>
+            <param name="targetType">The parameter is not used.</param>
+            <param name="parameter">The parameter is not used.</param>
+            <param name="culture">The parameter is not used.</param>
+            <returns>Returns a DrawingImage that has The visualized ViewModel on it</returns>
+        </member>
+        <member name="M:Airspace_Commander.ModelToDrawingImageConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            The method is not used.
+            </summary>
+            <param name="value">The parameter is not used.</param>
+            <param name="targetType">The parameter is not used.</param>
+            <param name="parameter">The parameter is not used.</param>
+            <param name="culture">The parameter is not used.</param>
+            <returns>Returns a NotImplementedException</returns>
+        </member>
+        <member name="T:Airspace_Commander.NuclearWarhead">
+            <summary>
+            This class represents a nuclear warhead
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.NuclearWarhead.name">
+            <summary>
+            Contains the name of this warhead for display
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.NuclearWarhead.damage">
+            <summary>
+            Contains the damage this warhead deals
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.NuclearWarhead.radius">
+            <summary>
+            Contains the explosion's radius
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.NuclearWarhead.#ctor(System.String,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Airspace_Commander.NuclearWarhead" /> class.
+            </summary>
+            <param name="newName">The name to display</param>
+            <param name="extraDmg">Additional damage this warhead will deal (base: 1)</param>
+            <param name="extraRadius">Additional radius in which this warhead will be effective (base: 1)</param>
+        </member>
+        <member name="P:Airspace_Commander.NuclearWarhead.Name">
+            <summary>
+            Gets the name of this warhead
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.NuclearWarhead.Damage">
+            <summary>
+            Gets the damage this warhead deals
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.NuclearWarhead.Radius">
+            <summary>
+            Gets the radius this warhead is effective in
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.NuclearWarhead.ToString">
+            <summary>
+            Converts the warhead to string for display
+            </summary>
+            <returns>Returns the stringified version of the warhead</returns>
+        </member>
+        <member name="T:Airspace_Commander.Rocket">
+            <summary>
+            Rocket business logic
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Rocket.W">
+            <summary>
+            The width of the Rocket
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Rocket.H">
+            <summary>
+            The height of the Rocket
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Rocket.position">
+            <summary>
+            Contains the position of the rocket
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Rocket.dx">
+            <summary>
+            Contains the delta speed on the X axis
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Rocket.dy">
+            <summary>
+            Contains the delta speed on the Y axis
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Rocket.startX">
+            <summary>
+            Contains the target coordinate on the X axis
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Rocket.startY">
+            <summary>
+            Contains the target coordinate on the Y axis
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Rocket.targetX">
+            <summary>
+            Contains the target coordinate on the X axis
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Rocket.targetY">
+            <summary>
+            Contains the target coordinate on the Y axis
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Rocket.isFriendly">
+            <summary>
+            States if this rocket is friendly
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Rocket.isDestroyed">
+            <summary>
+            Indicates whether this rocket has been destroyed by an explosion
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Rocket.engine">
+            <summary>
+            Contains the engine
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Rocket.warhead">
+            <summary>
+            Contains the warhead
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.Rocket.#ctor(Airspace_Commander.IEngine,Airspace_Commander.IWarhead,System.Windows.Point,System.Double,System.Double,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Airspace_Commander.Rocket" /> class.
+            </summary>
+            <param name="newEngine">The engine this rocket will use</param>
+            <param name="newWarhead">The warhead this rocket will use</param>
+            <param name="coords">The coordinates this rocket is at</param>
+            <param name="newTargetX">Target coordinate on the X axis</param>
+            <param name="newTargetY">Target coordinate on the Y axis</param>
+            <param name="newIsFriendly">The "friendlyness" of the rocket</param>
+        </member>
+        <member name="P:Airspace_Commander.Rocket.Position">
+            <summary>
+            Gets the position of this rocket
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Rocket.TargetX">
+            <summary>
+            Gets the target coordinate on the X axis
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Rocket.TargetY">
+            <summary>
+            Gets the target coordinate on the Y axis
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Rocket.StartX">
+            <summary>
+            Gets the start coordinate on the X axis
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Rocket.StartY">
+            <summary>
+            Gets the start coordinate on the Y axis
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Rocket.IsDestroyed">
+            <summary>
+            Gets a value indicating whether the rocket is destroyed
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Rocket.IsFriendly">
+            <summary>
+            Gets a value indicating whether the rocket is friendly
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Rocket.Angle">
+            <summary>
+            Gets the direction (display) of the rocket
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Rocket.Engine">
+            <summary>
+            Gets the engine of the rocket
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Rocket.Warhead">
+            <summary>
+            Gets the warhead installed on the rocket
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.Rocket.ChangeSpeed">
+            <summary>
+            Increases the rocket's delta speed defined by the engine's properties
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.Rocket.Move(Airspace_Commander.GameManager,System.ComponentModel.BindingList{Airspace_Commander.Building})">
+            <summary>
+            Moves the rocket
+            </summary>
+            <param name="gm">The GameManager to use</param>
+            <param name="buildings">A list containing all buildings</param>
+            <returns>Returns true if the move was successful, false if the rocket went boom</returns>
+        </member>
+        <member name="M:Airspace_Commander.Rocket.Explode(Airspace_Commander.GameManager,Airspace_Commander.Building)">
+            <summary>
+            Creates an explosion around the rocket's coordinates
+            </summary>
+            /// <param name="gm">The GameManager to use</param>
+            <param name="building">The building participating in the collision (if any)</param>
+        </member>
+        <member name="M:Airspace_Commander.Rocket.GetHit(Airspace_Commander.Explosion)">
+            <summary>
+            Simulates taking a hit by an explosion
+            </summary>
+            <param name="explosion">The explosion which caused the hit</param>
+            <returns>Returns true if the rocket has been destroyed</returns>
+        </member>
+        <member name="T:Airspace_Commander.RocketToGeometryConverter">
+            <summary>
+            Converter between a Rocket and a Geometry
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.RocketToGeometryConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a rocket into a Geometry
+            </summary>
+            <param name="value">The rocket</param>
+            <param name="targetType">The parameter is not used.</param>
+            <param name="parameter">The parameter is not used.</param>
+            <param name="culture">The parameter is not used.</param>
+            <returns>Returns a Geometry containing the rocket</returns>
+        </member>
+        <member name="M:Airspace_Commander.RocketToGeometryConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            The method is not used.
+            </summary>
+            <param name="value">The parameter is not used.</param>
+            <param name="targetType">The parameter is not used.</param>
+            <param name="parameter">The parameter is not used.</param>
+            <param name="culture">The parameter is not used.</param>
+            <returns>Returns a NotImplementedException</returns>
+        </member>
+        <member name="T:Airspace_Commander.Shield">
+            <summary>
+            Represents a shield over a building
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Shield.W">
+            <summary>
+            The width of the shield
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Shield.H">
+            <summary>
+            The height of the shield
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Shield.maxHP">
+            <summary>
+            The max HP of the shield
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Shield.curHP">
+            <summary>
+            The current (actual) HP of the shield
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.Shield.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Airspace_Commander.Shield" /> class.
+            </summary>
+            <param name="newMaxHP">Max hitpoints this shield will have</param>
+        </member>
+        <member name="P:Airspace_Commander.Shield.MaxHP">
+            <summary>
+            Gets the maxHP of the shield
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Shield.CurHP">
+            <summary>
+            Gets or sets the current HP of the shield
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.Shield.Hit(System.Int32)">
+            <summary>
+            Damages the shield
+            </summary>
+            <param name="damage">The amount of damage to deal</param>
+        </member>
+        <member name="T:Airspace_Commander.SmallEngine">
+            <summary>
+            This class represents a small engine
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.SmallEngine.name">
+            <summary>
+            Contains the name of the engine for display
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.SmallEngine.speed">
+            <summary>
+            Contains the base speed the engine has
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.SmallEngine.speedRate">
+            <summary>
+            Contains the acceleration rate the engine uses
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.SmallEngine.#ctor(System.String,System.Double,System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Airspace_Commander.SmallEngine" /> class.
+            </summary>
+            <param name="newName">The name to display</param>
+            <param name="extraSpeed">Additional speed from bonuses</param>
+            <param name="extraSr">Additional acceleration from bonuses</param>
+        </member>
+        <member name="P:Airspace_Commander.SmallEngine.Name">
+            <summary>
+            Gets the name of the engine
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.SmallEngine.Speed">
+            <summary>
+            Gets or sets the speed the engine has
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.SmallEngine.SpeedRate">
+            <summary>
+            Gets or sets the acceleration rate the engine uses
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.SmallEngine.Clone">
+            <summary>
+            Clones the whole engine
+            </summary>
+            <returns>Returns an exact copy of the engine</returns>
+        </member>
+        <member name="M:Airspace_Commander.SmallEngine.ToString">
+            <summary>
+            Converts the engine to string for display
+            </summary>
+            <returns>Returns the stringified version of the engine</returns>
+        </member>
+        <member name="T:Airspace_Commander.SmallWarhead">
+            <summary>
+            Small warhead variant
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.SmallWarhead.name">
+            <summary>
+            Contains the name of this warhead for display
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.SmallWarhead.damage">
+            <summary>
+            Contains the damage this warhead deals
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.SmallWarhead.radius">
+            <summary>
+            Contains the explosion's radius
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.SmallWarhead.#ctor(System.String,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Airspace_Commander.SmallWarhead" /> class.
+            </summary>
+            <param name="newName">The name to display</param>
+            <param name="extraDmg">Additional damage this warhead will deal (base: 1)</param>
+            <param name="extraRadius">Additional radius in which this warhead will be effective (base: 1)</param>
+        </member>
+        <member name="P:Airspace_Commander.SmallWarhead.Name">
+            <summary>
+            Gets the name of this warhead
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.SmallWarhead.Damage">
+            <summary>
+            Gets the damage this warhead deals
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.SmallWarhead.Radius">
+            <summary>
+            Gets the radius this warhead is effective in
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.SmallWarhead.ToString">
+            <summary>
+            Converts the warhead to string for display
+            </summary>
+            <returns>Returns the stringified version of the warhead</returns>
+        </member>
+        <member name="T:Airspace_Commander.Ufo">
+            <summary>
+            Ufo business logic
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Ufo.W">
+            <summary>
+            The width of the UFO
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Ufo.H">
+            <summary>
+            The height of the UFO
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Ufo.dx">
+            <summary>
+            Contains the delta speed on the X axis
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Ufo.position">
+            <summary>
+            Contains the position of the UFO
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Ufo.startX">
+            <summary>
+            Contains the starting coordinate on the X axis
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Ufo.startY">
+            <summary>
+            Contains the starting coordinate on the Y axis
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Ufo.targetX">
+            <summary>
+            Contains the target coordinate on the X axis
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Ufo.targetY">
+            <summary>
+            Contains the target coordinate on the Y axis
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Ufo.curHP">
+            <summary>
+            Contains the current HP of the UFO
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Ufo.alreadyHit">
+            <summary>
+            Contains the explosions that already hit the UFO (multi-tick damage protection)
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.Ufo.engine">
+            <summary>
+            Contains the UFO's engine (OMG it's using our technology!!!)
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.Ufo.#ctor(System.Windows.Point,System.Double,System.Int32,Airspace_Commander.IEngine)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Airspace_Commander.Ufo" /> class.
+            </summary>
+            <param name="coords">The starting coordinates</param>
+            <param name="newTargetX">The target coordinate on the X axis</param>
+            <param name="newCurHP">Starting HP</param>
+            <param name="newEngine">The engine to use</param>
+        </member>
+        <member name="P:Airspace_Commander.Ufo.Position">
+            <summary>
+            Gets the position of the UFO
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Ufo.StartX">
+            <summary>
+            Gets the starting coordinate on the X axis
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Ufo.StartY">
+            <summary>
+            Gets the starting coordinate on the Y axis
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Ufo.TargetX">
+            <summary>
+            Gets the target coordinate on the X axis
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Ufo.TargetY">
+            <summary>
+            Gets the target coordinate on the Y axis
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Ufo.CurHP">
+            <summary>
+            Gets or sets the current HP of the UFO
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Ufo.IsDestroyed">
+            <summary>
+            Gets a value indicating whether the UFO is destroyed
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Ufo.Angle">
+            <summary>
+            Gets the direction (display) of the UFO (0 - left/right)
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.Ufo.Move(Airspace_Commander.GameManager,System.ComponentModel.BindingList{Airspace_Commander.Building})">
+            <summary>
+            Moves the UFO
+            </summary>
+            <param name="gm">The GameManager to use</param>
+            <param name="buildings">The parameter is not used.</param>
+            <returns>Returns false if the UFO is no more, true otherwise</returns>
+        </member>
+        <member name="M:Airspace_Commander.Ufo.ChangeSpeed">
+            <summary>
+            Increases the rocket's delta speed defined by the engine's properties
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.Ufo.Explode(Airspace_Commander.GameManager,Airspace_Commander.Building)">
+            <summary>
+            Defines how the UFO explodes
+            </summary>
+            <param name="gm">The GameManager to use</param>
+            <param name="building">The parameter is not used.</param>
+        </member>
+        <member name="M:Airspace_Commander.Ufo.GetHit(Airspace_Commander.Explosion)">
+            <summary>
+            Simulates taking a hit from an explosion
+            </summary>
+            <param name="explosion">The explosion that caused the hit</param>
+            <returns>Returns false</returns>
+        </member>
+        <member name="T:Airspace_Commander.UfoToGeometryConverter">
+            <summary>
+            Converts between a UFO and a Geometry
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.UfoToGeometryConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a UFO into a Geometry
+            </summary>
+            <param name="value">The UFO</param>
+            <param name="targetType">The parameter is not used.</param>
+            <param name="parameter">The parameter is not used.</param>
+            <param name="culture">The parameter is not used.</param>
+            <returns>Returns a Geometry containing the UFO</returns>
+        </member>
+        <member name="M:Airspace_Commander.UfoToGeometryConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            The method is not used.
+            </summary>
+            <param name="value">The parameter is not used.</param>
+            <param name="targetType">The parameter is not used.</param>
+            <param name="parameter">The parameter is not used.</param>
+            <param name="culture">The parameter is not used.</param>
+            <returns>Returns a NotImplementedException</returns>
+        </member>
+        <member name="T:Airspace_Commander.ViewModel">
+            <summary>
+            The ViewModel handles data exchange between the UI and the business logic
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.ViewModel.score">
+            <summary>
+            Contains the current score of the player
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.ViewModel.remainingRockets">
+            <summary>
+            Contains the player's remaining rocket he/she can still fire
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.ViewModel.buildings">
+            <summary>
+            Contains all buildings in the game
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.ViewModel.explosions">
+            <summary>
+            Contains the currently existing explosions
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.ViewModel.movables">
+            <summary>
+            Contains the currently existing movable objects
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.ViewModel.engines">
+            <summary>
+            Contains the currently available engines
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.ViewModel.warheads">
+            <summary>
+            Contains the currently available warheads
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.ViewModel.selectedEngine">
+            <summary>
+            The selected (by player) engine
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.ViewModel.selectedWarhead">
+            <summary>
+            The selected (by player) warhead
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.ViewModel.nuclearTimer">
+            <summary>
+            Contains the seconds until a nuclear rocket can be fired again
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.ViewModel.shieldResearch">
+            <summary>
+            Stores the current shield research boost
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.ViewModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Airspace_Commander.ViewModel" /> class.
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.ViewModel.Self">
+            <summary>
+            Gets the current instance of the ViewModel
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.ViewModel.Buildings">
+            <summary>
+            Gets or sets a BindingList containing all buildings
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.ViewModel.Explosions">
+            <summary>
+            Gets or sets a BindingList containing all explosions
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.ViewModel.Movables">
+            <summary>
+            Gets or sets a BindingList containing all movable objects
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.ViewModel.Engines">
+            <summary>
+            Gets or sets a BindingList containing all available engines
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.ViewModel.Warheads">
+            <summary>
+            Gets or sets a BindingList containing all available warheads
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.ViewModel.SelectedEngine">
+            <summary>
+            Gets or sets the selected engine
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.ViewModel.SelectedWarhead">
+            <summary>
+            Gets or sets the selected warhead
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.ViewModel.Score">
+            <summary>
+            Gets or sets the current score
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.ViewModel.RemainingRockets">
+            <summary>
+            Gets or sets the currently available rocket number
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.ViewModel.NuclearTimer">
+            <summary>
+            Gets or sets the nuclear launch countdown timer
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.ViewModel.NuclearColor">
+            <summary>
+            Gets the color for the nuclear launch countdown text
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.ViewModel.MediumEngineResearch">
+            <summary>
+            Gets the color for the Medium Engine research status indicator
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.ViewModel.LargeEngineResearch">
+            <summary>
+            Gets the color for the Large Engine research status indicator
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.ViewModel.MediumWarheadResearch">
+            <summary>
+            Gets the color for the Medium Warhead research status indicator
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.ViewModel.LargeWarheadResearch">
+            <summary>
+            Gets the color for the Large Warhead research status indicator text
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.ViewModel.NuclearWarheadResearch">
+            <summary>
+            Gets the color for the Nuclear Warhead research status indicator text
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.ViewModel.ShieldResearch">
+            <summary>
+            Gets or sets the shield research value
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.ViewModel.GetBuildingBrush(System.Double,System.Double)">
+            <summary>
+            Gets the brush for buildings
+            </summary>
+            <param name="x">The coordinate on the X axis</param>
+            <param name="y">The coordinate on the Y axis</param>
+            <returns>Returns the brush for a building</returns>
+        </member>
+        <member name="M:Airspace_Commander.ViewModel.GetShieldBrush(System.Double,System.Double)">
+            <summary>
+            Gets the brush for shields
+            </summary>
+            <param name="x">The coordinate on the X axis</param>
+            <param name="y">The coordinate on the Y axis</param>
+            <returns>Returns the brush for a building</returns>
+        </member>
+        <member name="M:Airspace_Commander.ViewModel.GetMeteorBrush(System.Double,System.Double)">
+            <summary>
+            Gets the Brush for meteors
+            </summary>
+            <param name="x">The coordinate on the X axis</param>
+            <param name="y">The coordinate on the Y axis</param>
+            <returns>Returns the brush for a building</returns>
+        </member>
+        <member name="M:Airspace_Commander.ViewModel.GetRocketBrush(System.Double,System.Double,System.Int32)">
+            <summary>
+            Gets the brush for rockets
+            </summary>
+            <param name="x">The coordinate on the X axis</param>
+            <param name="y">The coordinate on the Y axis</param>
+            <param name="angle">The angle by which the texture should be rotated</param>
+            <returns>Returns the brush for a rocket</returns>
+        </member>
+        <member name="M:Airspace_Commander.ViewModel.GetUfoBrush(System.Double,System.Double)">
+            <summary>
+            Gets the brush for UFOs
+            </summary>
+            <param name="x">The coordinate on the X axis</param>
+            <param name="y">The coordinate on the Y axis</param>
+            <returns>Returns the brush for a UFO</returns>
+        </member>
+        <member name="M:Airspace_Commander.ViewModel.GetJetBrush(System.Double,System.Double,System.Int32)">
+            <summary>
+            Gets the brush for Jets
+            </summary>
+            <param name="x">The coordinate on the X axis</param>
+            <param name="y">The coordinate on the Y axis</param>
+            <param name="angle">The angle by which the texture should be rotated</param>
+            <returns>Returns the brush for a Jet</returns>
+        </member>
+        <member name="M:Airspace_Commander.ViewModel.DoDraw">
+            <summary>
+            Draws the current state on the play area
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.ViewModel.GetBrush(System.String,System.Double,System.Double,System.Int32,System.Int32)">
+            <summary>
+            Creates an ImageBrush
+            </summary>
+            <param name="fname">The file path and name where the image is located</param>
+            <param name="x">X coordinate for ViewPort</param>
+            <param name="y">Y coordinate for ViewPort</param>
+            <param name="w">Width for ViewPort</param>
+            <param name="h">Height for ViewPort</param>
+            <returns>Returns an ImageBrush that has the desired texture</returns>
+        </member>
+        <member name="T:Airspace_Commander.IWarhead">
+            <summary>
+            This is the interface for all rocket warheads in the game
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.IWarhead.Name">
+            <summary>
+            Gets the name of the warhead
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.IWarhead.Radius">
+            <summary>
+            Gets the explosion radius
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.IWarhead.Damage">
+            <summary>
+            Gets the damage this warhead deals
+            </summary>
+        </member>
+        <member name="T:Airspace_Commander.App">
+            <summary>
+            Interaction logic for App.XAML
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:Airspace_Commander.Bindable">
+            <summary>
+            Class for managing Bindable objects
+            </summary>
+        </member>
+        <member name="E:Airspace_Commander.Bindable.PropertyChanged">
+            <summary>
+            Event to indicate property change
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.Bindable.OnPropertyChanged(System.String)">
+            <summary>
+            This function manages the fired PropertyChanged event
+            </summary>
+            <param name="name">The name of the changed property</param>
+        </member>
+        <member name="M:Airspace_Commander.Bindable.SetProperty``1(``0@,``0,System.String)">
+            <summary>
+            Use this function in a property's setter
+            </summary>
+            <typeparam name="T">Generic type</typeparam>
+            <param name="field">The field to set</param>
+            <param name="newvalue">The value to put into the field</param>
+            <param name="name">The caller's name</param>
+        </member>
+        <member name="T:Airspace_Commander.MainWindow">
+            <summary>
+            Interaction logic for MainWindow.xaml
+            </summary>
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.MainWindow.r">
+            <summary>
+            Random generator
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.MainWindow.grid">
+            <summary>
+            Stores the canvas
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.MainWindow.vm">
+            <summary>
+            Stores the viewmodel
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.MainWindow.gm">
+            <summary>
+            Stores the game manager
+            </summary>
+        </member>
+        <member name="F:Airspace_Commander.MainWindow.cheat">
+            <summary>
+            Indicates whether cheating is enabled
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.MainWindow.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Airspace_Commander.MainWindow"/> class
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.MainWindow.Grid">
+            <summary>
+            Gets or sets the grid to house the game area
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.MainWindow.R">
+            <summary>
+            Gets a random number generator
+            </summary>
+        </member>
+        <member name="M:Airspace_Commander.MainWindow.Window_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Executes as soon as the window has loaded
+            </summary>
+            <param name="sender">The sender object</param>
+            <param name="e">Additional parameters</param>
+        </member>
+        <member name="M:Airspace_Commander.MainWindow.NTimer_Tick(System.Object,System.EventArgs)">
+            <summary>
+            Nuclear rocket usage countdown
+            </summary>
+            <param name="sender">The parameter is not used.</param>
+            <param name="e">The parameter is not used.</param>
+        </member>
+        <member name="M:Airspace_Commander.MainWindow.Timer_Tick(System.Object,System.EventArgs)">
+            <summary>
+            Executes on every tick fired by the timer
+            </summary>
+            <param name="sender">The parameter is not used.</param>
+            <param name="e">The parameter is not used.</param>
+        </member>
+        <member name="M:Airspace_Commander.MainWindow.FireRocket_Click(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            Fires a rocket to where the user clicked
+            </summary>
+            <param name="sender">The parameter is not used.</param>
+            <param name="e">The mouse</param>
+        </member>
+        <member name="M:Airspace_Commander.MainWindow.EngineResearch_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the click event on the warhead research button
+            </summary>
+            <param name="sender">The parameter is not used.</param>
+            <param name="e">The parameter is not used.</param>
+        </member>
+        <member name="M:Airspace_Commander.MainWindow.WarheadResearch_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the click event on the warhead research button
+            </summary>
+            <param name="sender">The parameter is not used.</param>
+            <param name="e">The parameter is not used.</param>
+        </member>
+        <member name="M:Airspace_Commander.MainWindow.AddShield_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the click event on the add shield button
+            </summary>
+            <param name="sender">The parameter is not used.</param>
+            <param name="e">The parameter is not used.</param>
+        </member>
+        <member name="M:Airspace_Commander.MainWindow.Renovate_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the click event on the renovate buildings button
+            </summary>
+            <param name="sender">The parameter is not used.</param>
+            <param name="e">The parameter is not used.</param>
+        </member>
+        <member name="M:Airspace_Commander.MainWindow.Modernize_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the click event on the modernize buildings button
+            </summary>
+            <param name="sender">The parameter is not used.</param>
+            <param name="e">The parameter is not used.</param>
+        </member>
+        <member name="M:Airspace_Commander.MainWindow.UpgradeShield_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the click event on the modernize buildings button
+            </summary>
+            <param name="sender">The parameter is not used.</param>
+            <param name="e">The parameter is not used.</param>
+        </member>
+        <member name="M:Airspace_Commander.MainWindow.Window_KeyDown(System.Object,System.Windows.Input.KeyEventArgs)">
+            <summary>
+            Handles KeyDown event
+            </summary>
+            <param name="sender">The sender object</param>
+            <param name="e">The key pressed</param>
+        </member>
+        <member name="M:Airspace_Commander.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Airspace_Commander.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Airspace_Commander.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
+            </summary>
+        </member>
+    </members>
+</doc>

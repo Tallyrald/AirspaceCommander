@@ -1,0 +1,68 @@
+﻿<Window x:Name="Airspace_Commander" x:Class="Airspace_Commander.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Airspace_Commander"
+        mc:Ignorable="d"
+        Title="Airspace Commander" Height="720" Width="1280" Loaded="Window_Loaded" KeyDown="Window_KeyDown"
+        ResizeMode="NoResize"
+        Background="{StaticResource WinBgColor}"
+        BorderBrush="{StaticResource WinBorderColor}"
+        BorderThickness="{StaticResource WinBorderSize}" Icon="Airspace_Commander.ico">
+    <Window.Resources>
+        <local:ModelToDrawingImageConverter x:Key="ModelToDrawingImageConverter" />
+    </Window.Resources>
+    <Grid ShowGridLines="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.8*"></ColumnDefinition>
+            <ColumnDefinition Width="0.2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Canvas Background="Black" MouseLeftButtonUp="FireRocket_Click" HorizontalAlignment="Left" Grid.Column="0">
+            <Image Stretch="Uniform" Source="{Binding Path=Self, Converter={StaticResource ModelToDrawingImageConverter}}" />
+        </Canvas>
+        <Grid Grid.Column="1" Background="Black">
+            <Label x:Name="lbl_ScoreText" Content="Score:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="108" Foreground="White" ScrollViewer.VerticalScrollBarVisibility="Disabled" FontSize="20"/>
+            <Label x:Name="lbl_Score" Content="{Binding Path=Score}" ContentStringFormat="{}{0} points" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top" Width="121" Foreground="White" ScrollViewer.VerticalScrollBarVisibility="Disabled" FontSize="20"/>
+
+            <Label x:Name="lbl_RocketNumText" Content="Rockets:" HorizontalAlignment="Left" Margin="160,10,0,0" VerticalAlignment="Top" Width="84" Foreground="White" ScrollViewer.VerticalScrollBarVisibility="Disabled" FontSize="20"/>
+            <Label x:Name="lbl_RocketNum" Content="{Binding Path=RemainingRockets}" HorizontalAlignment="Left" Margin="160,47,-3,0" VerticalAlignment="Top" Width="97" Foreground="White" ScrollViewer.VerticalScrollBarVisibility="Disabled" FontSize="20"/>
+
+            <Button x:Name="btn_Modernize" Click="Modernize_Click" Margin="32,118,0,0" Width="192" Height="24" HorizontalAlignment="Left" VerticalAlignment="Top">Modernize buildings (+1 max. HP)</Button>
+            <Button x:Name="btn_Renovate" Click="Renovate_Click" Margin="32,148,0,0" Width="192" Height="24" HorizontalAlignment="Left" VerticalAlignment="Top">Renovate buildings (+1 HP)</Button>
+            <Button x:Name="btn_AddShield" Click="AddShield_Click" Margin="32,178,0,0" Width="192" Height="24" HorizontalAlignment="Left" VerticalAlignment="Top" Content="{Binding Path=ShieldResearch}" ContentStringFormat="Add shield to buildings with {0} HP"></Button>
+            <Button x:Name="btn_UpgradeShield" Click="UpgradeShield_Click" Margin="32,207,0,0" Width="192" Height="24" HorizontalAlignment="Left" VerticalAlignment="Top">Upgrade new(!) shields (+1 HP)</Button>
+
+            <Button x:Name="btn_EngineResearch" Click="EngineResearch_Click" Margin="32,270,0,0" Width="80" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">Research next</Button>
+            <Label x:Name="lbl_EngineResearch" Content="Engine" HorizontalAlignment="Left" Margin="46,236,0,0" VerticalAlignment="Top" Width="56" Foreground="White" ScrollViewer.VerticalScrollBarVisibility="Disabled" FontSize="15" Height="34"/>
+
+            <Button x:Name="btn_WarheadResearch" Click="WarheadResearch_Click" Width="80" Height="26" Margin="144,269,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">Research next</Button>
+            <Label x:Name="lbl_WarheadResearch" Content="Warhead" HorizontalAlignment="Left" Margin="148,236,0,0" VerticalAlignment="Top" Width="72" Foreground="White" ScrollViewer.VerticalScrollBarVisibility="Disabled" FontSize="15" Height="28"/>
+
+            <ComboBox x:Name="cBox_CurrentEngine" ItemsSource="{Binding Path=Engines}" SelectedItem="{Binding Path=SelectedEngine}" HorizontalAlignment="Left" Height="23" Margin="22,359,0,0" VerticalAlignment="Top" Width="100"/>
+            <Label x:Name="lbl_CurrentEngine" Content="Current engine" HorizontalAlignment="Left" Margin="20,320,0,0" VerticalAlignment="Top" Width="106" Foreground="White" ScrollViewer.VerticalScrollBarVisibility="Disabled" FontSize="14" Height="34"/>
+
+            <ComboBox x:Name="cBox_CurrentWarhead" ItemsSource="{Binding Path=Warheads}" SelectedItem="{Binding Path=SelectedWarhead}" HorizontalAlignment="Left" Height="23" Margin="136,359,0,0" VerticalAlignment="Top" Width="100"/>
+            <Label x:Name="lbl_CurrentWarhead" Content="Current warhead" HorizontalAlignment="Left" Margin="128,320,0,0" VerticalAlignment="Top" Width="114" Foreground="White" ScrollViewer.VerticalScrollBarVisibility="Disabled" FontSize="14" Height="34"/>
+
+            <Label x:Name="lbl_NuclearTimerText" Content="Can fire nuclear rocket in: " HorizontalAlignment="Left" Margin="17,387,0,0" VerticalAlignment="Top" Width="166" Foreground="{Binding Path=NuclearColor}" ScrollViewer.VerticalScrollBarVisibility="Disabled" FontSize="14" Height="34"/>
+            <Label x:Name="lbl_NuclearTimer" Content="{Binding Path=NuclearTimer}" ContentStringFormat="{}{0} s" HorizontalAlignment="Left" Margin="188,387,0,0" VerticalAlignment="Top" Width="48" Foreground="{Binding Path=NuclearColor}" ScrollViewer.VerticalScrollBarVisibility="Disabled" FontSize="14" Height="34"/>
+
+            <Label x:Name="lbl_EngineResearchCost" Content="Engine research:" HorizontalAlignment="Left" Margin="-3,447,0,0" VerticalAlignment="Top" Width="216" Foreground="White" ScrollViewer.VerticalScrollBarVisibility="Disabled" FontSize="15" Height="34"/>
+            <Label x:Name="lbl_EngineResearchCostMedium" Content="Medium: 50 points" HorizontalAlignment="Left" Margin="113,447,-15,0" VerticalAlignment="Top" Width="156" Foreground="{Binding Path=MediumEngineResearch}" ScrollViewer.VerticalScrollBarVisibility="Disabled" FontSize="15" Height="34"/>
+            <Label x:Name="lbl_EngineResearchCostLarge" Content="Large: 80 points" HorizontalAlignment="Left" Margin="113,463,-75,0" VerticalAlignment="Top" Width="216" Foreground="{Binding Path=LargeEngineResearch}" ScrollViewer.VerticalScrollBarVisibility="Disabled" FontSize="15" Height="34"/>
+            
+            <Label x:Name="lbl_WarheadResearchCost" Content="Warhead research:" HorizontalAlignment="Left" Margin="-3,484,0,0" VerticalAlignment="Top" Width="135" Foreground="White" ScrollViewer.VerticalScrollBarVisibility="Disabled" FontSize="15" Height="34"/>
+            <Label x:Name="lbl_WarheadResearchCostMedium" Content="Medium: 25 points" HorizontalAlignment="Left" Margin="113,502,-1,0" VerticalAlignment="Top" Width="142" Foreground="{Binding Path=MediumWarheadResearch}" ScrollViewer.VerticalScrollBarVisibility="Disabled" FontSize="15" Height="34"/>
+            <Label x:Name="lbl_WarheadResearchCostLarge" Content="Large: 75 points" HorizontalAlignment="Left" Margin="113,518,0,0" VerticalAlignment="Top" Width="123" Foreground="{Binding Path=LargeWarheadResearch}" ScrollViewer.VerticalScrollBarVisibility="Disabled" FontSize="15" Height="34"/>
+            <Label x:Name="lbl_WarheadResearchCostNuclear" Content="Nuclear: 150 points" HorizontalAlignment="Left" Margin="113,534,-3,0" VerticalAlignment="Top" Width="144" Foreground="{Binding Path=NuclearWarheadResearch}" ScrollViewer.VerticalScrollBarVisibility="Disabled" FontSize="15" Height="34"/>
+            
+            <Label x:Name="lbl_Modernize" Content="Modernize buildings: 130 points" HorizontalAlignment="Left" Margin="-3,568,0,0" VerticalAlignment="Top" Width="247" Foreground="White" ScrollViewer.VerticalScrollBarVisibility="Disabled" FontSize="15" Height="34"/>
+            <Label x:Name="lbl_Renovate" Content="Renovate buildings: 70 points" HorizontalAlignment="Left" Margin="-3,586,0,0" VerticalAlignment="Top" Width="227" Foreground="White" ScrollViewer.VerticalScrollBarVisibility="Disabled" FontSize="15" Height="34"/>
+            <Label x:Name="lbl_AddShield" Content="Add shield to buildings: 25 points" HorizontalAlignment="Left" Margin="-3,605,0,0" VerticalAlignment="Top" Width="244" Foreground="White" ScrollViewer.VerticalScrollBarVisibility="Disabled" FontSize="15" Height="34"/>
+            <Label x:Name="lbl_UpgradeShield" Content="Upgrade new shields: 100 points" HorizontalAlignment="Left" Margin="-3,623,0,0" VerticalAlignment="Top" Width="239" Foreground="White" ScrollViewer.VerticalScrollBarVisibility="Disabled" FontSize="15" Height="34"/>
+        </Grid>
+    </Grid>
+
+
+</Window>

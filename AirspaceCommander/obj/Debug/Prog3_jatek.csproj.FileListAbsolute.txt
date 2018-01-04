@@ -1,0 +1,17 @@
+C:\Users\mohac\documents\visual studio 2015\Projects\Prog3_jatek\Prog3_jatek\bin\Debug\Prog3_jatek.exe.config
+C:\Users\mohac\documents\visual studio 2015\Projects\Prog3_jatek\Prog3_jatek\bin\Debug\Prog3_jatek.exe
+C:\Users\mohac\documents\visual studio 2015\Projects\Prog3_jatek\Prog3_jatek\bin\Debug\Prog3_jatek.pdb
+C:\Users\mohac\documents\visual studio 2015\Projects\Prog3_jatek\Prog3_jatek\obj\Debug\Prog3_jatek.csprojResolveAssemblyReference.cache
+C:\Users\mohac\documents\visual studio 2015\Projects\Prog3_jatek\Prog3_jatek\obj\Debug\MainWindow.g.cs
+C:\Users\mohac\documents\visual studio 2015\Projects\Prog3_jatek\Prog3_jatek\obj\Debug\App.g.cs
+C:\Users\mohac\documents\visual studio 2015\Projects\Prog3_jatek\Prog3_jatek\obj\Debug\Prog3_jatek_MarkupCompile.cache
+C:\Users\mohac\documents\visual studio 2015\Projects\Prog3_jatek\Prog3_jatek\obj\Debug\Prog3_jatek_MarkupCompile.lref
+C:\Users\mohac\documents\visual studio 2015\Projects\Prog3_jatek\Prog3_jatek\obj\Debug\MainWindow.baml
+C:\Users\mohac\documents\visual studio 2015\Projects\Prog3_jatek\Prog3_jatek\obj\Debug\Prog3_jatek.g.resources
+C:\Users\mohac\documents\visual studio 2015\Projects\Prog3_jatek\Prog3_jatek\obj\Debug\Prog3_jatek.Properties.Resources.resources
+C:\Users\mohac\documents\visual studio 2015\Projects\Prog3_jatek\Prog3_jatek\obj\Debug\Prog3_jatek.csproj.GenerateResource.Cache
+C:\Users\mohac\documents\visual studio 2015\Projects\Prog3_jatek\Prog3_jatek\obj\Debug\Prog3_jatek.exe
+C:\Users\mohac\documents\visual studio 2015\Projects\Prog3_jatek\Prog3_jatek\obj\Debug\Prog3_jatek.pdb
+C:\Users\mohac\documents\visual studio 2015\Projects\Prog3_jatek\Prog3_jatek\bin\Debug\Comments.XML
+C:\Users\mohac\Documents\Visual Studio 2015\Projects\Prog3_jatek\Prog3_jatek\obj\Debug\App.baml
+C:\Users\mohac\Documents\Visual Studio 2015\Projects\Prog3_jatek\Prog3_jatek\obj\Debug\GeneratedInternalTypeHelper.g.cs
